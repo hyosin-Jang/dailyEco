@@ -1,24 +1,471 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbarFadeDuration="0"
-        android:scrollbarSize="5dp"
-        android:scrollbarThumbVertical="@android:color/darker_gray"
-        android:scrollbars="vertical"
-        android:layout_weight="1">
-
-    </androidx.recyclerview.widget.RecyclerView>
 
 
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="결과 텍스트"
+        android:textSize="36sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_save" />
 
-</LinearLayout>
+    <CheckBox
+        android:id="@+id/ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ch1_yellow"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_yellow"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/ch1_green"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_green"
+        android:visibility="gone"
+        />
+
+    <CheckBox
+
+        android:id="@+id/ch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toEndOf="@+id/ch1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+
+        android:id="@+id/ch2_yellow"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toEndOf="@+id/ch1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_yellow"
+        android:visibility="gone"/>
+
+    <ImageView
+
+        android:id="@+id/ch2_green"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toEndOf="@+id/ch1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_green"
+        android:visibility="gone"/>
+
+
+    <CheckBox
+        android:id="@+id/ch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ch3_yellow"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_yellow"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/ch3_green"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_green"
+        android:visibility="gone"
+        />
+
+    <CheckBox
+        android:id="@+id/ch4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ch4_yellow"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_yellow"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ch4_green"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_green"
+        android:visibility="gone"/>
+
+    <CheckBox
+
+        android:id="@+id/ch5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.377"
+        app:layout_constraintStart_toEndOf="@+id/ch1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+
+        android:id="@+id/ch5_yellow"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.377"
+        app:layout_constraintStart_toEndOf="@+id/ch1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_yellow"
+        android:visibility="gone"/>
+
+    <ImageView
+
+        android:id="@+id/ch5_green"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.377"
+        app:layout_constraintStart_toEndOf="@+id/ch1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_green"
+        android:visibility="gone"/>
+
+    <CheckBox
+        android:id="@+id/ch6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ch6_yellow"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_yellow"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ch6_green"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_green"
+        android:visibility="gone"/>
+
+    <CheckBox
+        android:id="@+id/ch10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintStart_toEndOf="@+id/ch9"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ch7_yellow"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintStart_toEndOf="@+id/ch9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_yellow"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ch7_green"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintStart_toEndOf="@+id/ch9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_green"
+        android:visibility="gone"/>
+
+    <CheckBox
+        android:id="@+id/ch9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ch8_yellow"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_yellow"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ch8_green"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_green"
+        android:visibility="gone"/>
+
+    <CheckBox
+        android:id="@+id/ch9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ch9_yellow"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_yellow"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ch9_green"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_green"
+        android:visibility="gone"/>
+
+    <CheckBox
+        android:id="@+id/ch10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ch10_yellow"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_yellow"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ch10_green"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/custom_checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toEndOf="@+id/ch2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_green"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="저장"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="148dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save_red" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0    1    2    3    4    5    6    7    8    9    10"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.659"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.306" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
