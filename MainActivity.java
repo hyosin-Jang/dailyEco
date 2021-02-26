@@ -2,6 +2,7 @@ package com.example.setting2;
 //메인액티비티
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     public static ImageButton back;
 
 
+    public static SharedPreferences sharedPreferences = null;
+    public static SharedPreferences.Editor editor = null;
+    public static String SHARE_NAME = "SHARE_PREF";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
         //스위치 작동 관련
         push.setOnCheckedChangeListener(new pushListener());
 
-
+        sharedPreferences = getSharedPreferences(SHARE_NAME,MODE_PRIVATE);
+        isChecked = sharedPreferences.getBoolean("switch",isChecked);
+        push.setChecked(isChecked);
 
         //환경 목표 횟수 변화 등 메뉴 클릭 시 화면 전환
         env.setOnClickListener(new View.OnClickListener(){
@@ -85,6 +91,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARE_NAME,0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        isChecked = push.isChecked();
+        editor.putBoolean("switch",isChecked);
+        editor.commit();
+
+    }
+
 
     public void alarmBroadcastReceiver(){
         Intent alarmBroadcastReceiverIntent = new Intent(this, AlarmBroadCastReceiver.class);
