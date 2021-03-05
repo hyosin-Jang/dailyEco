@@ -32,7 +32,7 @@
         android:paddingBottom="10dp"
         android:text="잔반 남기지 않기" />
 
-
+ 
 </LinearLayout>
 
 
