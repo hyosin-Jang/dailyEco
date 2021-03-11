@@ -2,6 +2,7 @@ package com.example.checkbox;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,8 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+
+
 public class MainActivity extends AppCompatActivity {
 
+    DBHelper DBHelper;
+    SQLiteDatabase db;
     CheckBox ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10;
     TextView txt_result;
     Button btn_save;
@@ -66,8 +71,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         txt_result = findViewById(R.id.txt_result);
+
         btn_save = findViewById(R.id.btn_save); //변수에 아이디 할당 -> 개체와 연결
 
+        DBHelper = new DBHelper(this);
         btn_save.setOnClickListener(new View.OnClickListener() {//btn_result 클릭됐을 때 액션
             @Override
             public void onClick(View v) {
@@ -254,7 +261,12 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
-                    txt_result.setText(Integer.toString(criteria[0]) + Integer.toString(criteria[1])+"정상작동");
+                    //txt_result.setText(Integer.toString(criteria[0]) + Integer.toString(criteria[1])+"정상작동");
+
+                    //db = DBHelper.getWritableDatabase();
+
+                    DBHelper.Update_tbl_goalcount(criteria[1], criteria[0]);
+                    //db.close();
 
                     if(criteria[0]!=0 && criteria[1]!=0)
                     {
@@ -262,9 +274,6 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 }
-
-
-
 
 
 
