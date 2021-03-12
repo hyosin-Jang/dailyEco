@@ -5,11 +5,11 @@ public class RecyclerData {
     private int imageIcon;
     private String textContent;
     private int imageNumBack;
-    private String textNum;
+    private int IntNum;
 
-    public RecyclerData(String textContent, String textNum){
+    public RecyclerData(String textContent, int IntNum){
         this.textContent=textContent;
-        this.textNum=textNum;
+        this.IntNum=IntNum;
 
     }
 
@@ -21,11 +21,11 @@ public class RecyclerData {
         this.textContent = textContent;
     }
 
-    public String getTextNum() {
-        return textNum;
+    public int getIntNum() {
+        return IntNum;
     }
 
-    public void setTextNum(String textNum) {
-        this.textNum = textNum;
+    public void setIntNum(int IntNum) {
+        this.IntNum = IntNum;
     }
 }

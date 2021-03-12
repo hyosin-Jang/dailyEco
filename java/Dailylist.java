@@ -1,16 +1,16 @@
 package com.example.dailyeco;
 
+import org.w3c.dom.Text;
+
 import java.text.DateFormat;
 import java.util.Date;
 
 public class Dailylist {
 
-    private int id_user;
-    private String name_user;
-    private Date doc_date;
+    private String doc_date;
     private int id_goal;
     private String name_goal;
-    private String daily_count;
+    private int daily_count;
     private int yellow_count;
     private int green_count;
     private int total_count;
@@ -19,27 +19,11 @@ public class Dailylist {
 
     }
 
-    public int getId_user() {
-        return id_user;
-    }
-
-    public void setId_user(int id_user) {
-        this.id_user = id_user;
-    }
-
-    public String getName_user() {
-        return name_user;
-    }
-
-    public void setName_user(String name_user) {
-        this.name_user = name_user;
-    }
-
-    public Date getDoc_date() {
+    public String getDoc_date() {
         return doc_date;
     }
 
-    public void setDoc_date(Date doc_date) {
+    public void setDoc_date(String doc_date) {
         this.doc_date = doc_date;
     }
 
@@ -59,9 +43,9 @@ public class Dailylist {
         this.name_goal = name_goal;
     }
 
-    public String getDaily_count() { return daily_count; }
+    public int getDaily_count() { return daily_count; }
 
-    public void setDaily_count(String daily_count) {
+    public void setDaily_count(int daily_count) {
         this.daily_count = daily_count;
     }
 

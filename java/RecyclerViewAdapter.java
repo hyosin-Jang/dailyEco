@@ -36,7 +36,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.imageIcon.setImageResource(R.drawable.ic_baseline_radio_button_checked_24);
         holder.textContent.setText(arrayList.get(position).getTextContent());
         holder.imageNumBack.setBackgroundResource(R.drawable._156_);
-        holder.textNum.setText(arrayList.get(position).getTextNum()+"회");
+        holder.IntNum.setText(arrayList.get(position).getIntNum()+"회");
     }
 
     @Override
@@ -50,14 +50,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         protected AppCompatImageView imageIcon;
         protected TextView textContent;
         protected AppCompatImageView imageNumBack;
-        protected TextView textNum;
+        protected TextView IntNum;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
             this.imageIcon = itemView.findViewById(R.id.icon);
             this.textContent = itemView.findViewById(R.id.content);
             this.imageNumBack = itemView.findViewById(R.id.num_back);
-            this.textNum = itemView.findViewById(R.id.num);
+            this.IntNum = itemView.findViewById(R.id.num);
 
         }
     }
