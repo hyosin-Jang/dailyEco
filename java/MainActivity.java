@@ -21,6 +21,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
@@ -72,7 +73,17 @@ public class MainActivity extends AppCompatActivity {
 
         //map recyclerview
         recyclerView = findViewById(R.id.list_item);
-
+        
+        //Fab - 플로팅추가버튼
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AddPageActivity.class);
+                startActivity(intent);
+            }
+        });
+        
         //제한된 사이즈임을 알림.
         recyclerView.setHasFixedSize(true);
 
