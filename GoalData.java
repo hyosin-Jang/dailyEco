@@ -23,7 +23,7 @@ public class GoalData {
     {
         this._is_active = _is_active;
     }
-    
+
     public String getGoal() {
         return goal;
     }
