@@ -5,10 +5,12 @@ import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.telephony.mbms.MbmsErrors;
 import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -29,6 +31,7 @@ import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 import org.w3c.dom.Text;
 
 import java.io.ByteArrayOutputStream;
+import java.nio.ByteBuffer;
 import java.sql.Time;
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -50,11 +53,17 @@ public class MainActivity extends AppCompatActivity {
     public byte[] iconBitmap(int d) {
         Drawable drawable = ContextCompat.getDrawable(this,d);
         Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
+        System.out.println(bitmap.getRowBytes());
+        System.out.println(bitmap.getHeight());
+
         ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG,100,byteArray);
-        byte[] img;
+        System.out.println(bitmap);
+
+        byte[] img;;
         img = byteArray.toByteArray();
 
+        System.out.println(img);
         return img;
     }
 

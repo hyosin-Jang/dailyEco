@@ -6,6 +6,7 @@ import android.content.res.loader.ResourcesProvider;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -60,7 +61,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         //환경실천목표 테이블
-        db.execSQL("CREATE TABLE IF NOT EXISTS tbl_goal (id_goal INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name_goal String, icon_goal BLOB, is_active INTEGER)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS tbl_goal (id_goal INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name_goal String UNIQUE, icon_goal BLOB, is_active INTEGER)");
 
 
 
@@ -137,8 +138,13 @@ public class DBHelper extends SQLiteOpenHelper {
     //환경실천목표를 추가하는 insert문
     public void Insert_tbl_goal(String _name_goal, byte[] _icon_goal, int _is_active){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("INSERT OR IGNORE INTO tbl_goal (name_goal, icon_goal, is_active) VALUES ('"+_name_goal+"', '"+_icon_goal+"',"+_is_active+")");
-
+        //db.execSQL("INSERT OR IGNORE INTO tbl_goal (name_goal, icon_goal, is_active) VALUES ('"+_name_goal+"', '"+_icon_goal+"',"+_is_active+")");
+        String sql="INSERT OR REPLACE INTO tbl_goal (name_goal, icon_goal, is_active) VALUES (?,?,?)";
+        SQLiteStatement insertSt = db.compileStatement(sql);
+        insertSt.bindString(1,_name_goal);
+        insertSt.bindBlob(2,_icon_goal);
+        insertSt.bindLong(3,_is_active);
+        insertSt.executeInsert();
     }
 
     //환경실천목표 추가화면의 6개 리스트를 수정하는 update문
