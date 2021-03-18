@@ -23,7 +23,6 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
@@ -54,17 +53,14 @@ public class MainActivity extends AppCompatActivity {
     public byte[] iconBitmap(int d) {
         Drawable drawable = ContextCompat.getDrawable(this,d);
         Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
-        System.out.println(bitmap.getRowBytes());
-        System.out.println(bitmap.getHeight());
 
         ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG,100,byteArray);
-        System.out.println(bitmap);
+
 
         byte[] img;;
         img = byteArray.toByteArray();
 
-        System.out.println(img);
         return img;
     }
 
@@ -82,17 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         //map recyclerview
         recyclerView = findViewById(R.id.list_item);
-        
-        //Fab - 플로팅추가버튼
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AddPageActivity.class);
-                startActivity(intent);
-            }
-        });
-        
+
         //제한된 사이즈임을 알림.
         recyclerView.setHasFixedSize(true);
 
