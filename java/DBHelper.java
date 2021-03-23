@@ -61,12 +61,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         //환경실천목표 테이블
-        db.execSQL("CREATE TABLE IF NOT EXISTS tbl_goal (id_goal INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name_goal String UNIQUE, icon_goal BLOB, is_active INTEGER)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS tbl_goal (id_goal INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name_goal String UNIQUE, icon_goal BLOB, is_active INTEGER);");
 
 
 
         //목표횟수변경 테이블
-        db.execSQL("CREATE TABLE IF NOT EXISTS tbl_goalcount (id_count INTEGER PRIMARY KEY AUTOINCREMENT, green_count INTEGER NOT NULL, yellow_count INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS tbl_goalcount (id_count INTEGER PRIMARY KEY AUTOINCREMENT, green_count INTEGER NOT NULL, yellow_count INTEGER NOT NULL);");
 
         db.execSQL("INSERT into tbl_goalcount(\n" +
                 "green_count, yellow_count)\n" +
@@ -122,7 +122,7 @@ public class DBHelper extends SQLiteOpenHelper {
     //daily 기록 insert문
     public void Insert_tbl_dailynum(String _doc_date, int _id_goal, int _daily_count){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("INSERT INTO tbl_dailynum (doc_date, id_dailynum, daily_count) VALUES('"+_doc_date+"', "+_id_goal+", "+_daily_count+")");
+        db.execSQL("INSERT INTO tbl_dailynum (doc_date, id_dailynum, daily_count) VALUES('"+_doc_date+"', "+_id_goal+", "+_daily_count+");");
 
     }
 
@@ -139,7 +139,7 @@ public class DBHelper extends SQLiteOpenHelper {
     //환경실천목표를 추가하는 insert문
     public void Insert_tbl_goal(String _name_goal, byte[] _icon_goal, int _is_active){
         SQLiteDatabase db = getWritableDatabase();
-        //db.execSQL("INSERT OR IGNORE INTO tbl_goal (name_goal, icon_goal, is_active) VALUES ('"+_name_goal+"', '"+_icon_goal+"',"+_is_active+")");
+        //db.execSQL("INSERT OR IGNORE INTO tbl_goal (name_goal, icon_goal, is_active) VALUES ('"+_name_goal+"', '"+_icon_goal+"',"+_is_active+");");
         String sql="INSERT OR REPLACE INTO tbl_goal (name_goal, icon_goal, is_active) VALUES (?,?,?)";
         SQLiteStatement insertSt = db.compileStatement(sql);
         insertSt.bindString(1,_name_goal);
