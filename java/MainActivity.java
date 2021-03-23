@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         mDBHelper = new DBHelper(this);
         mDailylist = new ArrayList<>();
 
-        //mDBHelper.Insert_tbl_dailynum("2021-03-24",1,6);
 
         //map recyclerview
         recyclerView = findViewById(R.id.list_item);
@@ -90,12 +90,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewAdapter = new RecyclerViewAdapter(arrayList);
         recyclerView.setAdapter(recyclerViewAdapter);
 
-        //RecyclerData recyclerData = new RecyclerData("텀블러 사용하기",2);
-        //arrayList.add(recyclerData);
-        //RecyclerData recyclerData2 = new RecyclerData("장바구니 사용하기","3");
-        //arrayList.add(recyclerData2);
-        //RecyclerData recyclerData3 = new RecyclerData("분리수거","5");
-        //arrayList.add(recyclerData3);
+        RecyclerData recyclerData = new RecyclerData("텀블러 사용하기",2);
+        arrayList.add(recyclerData);
+        RecyclerData recyclerData2 = new RecyclerData("장바구니 사용하기",3);
+        arrayList.add(recyclerData2);
+        RecyclerData recyclerData3 = new RecyclerData("분리수거",5);
+        arrayList.add(recyclerData3);
+
+
 
 
 
@@ -117,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
         mDBHelper.Insert_tbl_goal("양치컵 사용하기",icon,0);
 
 
+        mDBHelper.Update_tbl_goalcount(8, 3);
 
 
         final TextView textView = findViewById(R.id.date);
@@ -146,6 +149,13 @@ public class MainActivity extends AppCompatActivity {
 
         );
 
+        materialCalendarView.addDecorator(
+
+                new EventDecorator(Color.GREEN, Collections.singleton(CalendarDay.from(2021,3,15)))
+
+        );
+
+
         materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
@@ -167,16 +177,27 @@ public class MainActivity extends AppCompatActivity {
                     datetext=year+"-"+month+"-"+day;
 
                 textView.setText(datetext);
-
+/*
                 String namegoal;
                 int num;
+                int totalcount;
+
+                mDailylist = mDBHelper.getDailylist(datetext);
+                System.out.println(datetext);
 
                 for(int i=0;i<mDailylist.size();i++){
                     namegoal=mDailylist.get(i).getName_goal();
                     num=mDailylist.get(i).getDaily_count();
                     RecyclerData recyclerData = new RecyclerData(namegoal,num);
                     arrayList.add(recyclerData);
+                    System.out.print(namegoal);
+                    System.out.print(num);
                 }
+
+                totalcount=mDailylist.get(mDailylist.size()-1).getTotal_count();
+
+
+ */
 
 
 

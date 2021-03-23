@@ -92,6 +92,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM tbl_dailynum JOIN tbl_goal ON tbl_dailynum.id_goal = tbl_goal.id_goal WHERE doc_date =" + date,null);
 
+        System.out.println(cursor.getCount());
 
         if(cursor.getCount()!=0){
             //조회된 데이터가 있을 때 내부수행
