@@ -9,6 +9,8 @@
     tools:context="com.example.dailyeco.edit_goal_list"
     android:id="@+id/conlay">
 
+    <include
+        layout="@layout/toolbar_main"/>
 
     <EditText
         android:id="@+id/edit_add"
